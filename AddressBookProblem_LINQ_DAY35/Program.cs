@@ -104,8 +104,10 @@ namespace AddressBookProblem_LINQ_DAY35
 
 
             //UC7
-            addressBookManagement.GetCountByCityAndState(addressBookTable);
+            //addressBookManagement.GetCountByCityAndState(addressBookTable);
 
+            //UC8
+            addressBookManagement.GetSortedDataBasedOnPersonName(addressBookTable);
 
         }
 
