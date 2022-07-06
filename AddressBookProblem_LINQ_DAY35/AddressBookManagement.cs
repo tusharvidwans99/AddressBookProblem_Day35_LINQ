@@ -135,6 +135,40 @@ namespace AddressBookProblem_LINQ_DAY35
             }
         }
 
+        /// <summary>
+        /// UC10 - Gets the count of each type after grouping by type.
+        /// </summary>
+        /// <param name="dataTable">The data table.</param>
+        public void GetCountByType(DataTable dataTable)
+        {
+            var recordData = dataTable.AsEnumerable().GroupBy(r => r.Field<string>("type")).Select(r => new { type = r.Key, count = r.Count() });
+            foreach (var data in recordData)
+            {
+                Console.WriteLine("Type-" + data.type);
+                Console.WriteLine("Count for type- " + data.count);
+            }
+        }
+
+
+        /// <summary>
+        /// Prints the data.
+        /// </summary>
+        /// <param name="dataRow">The data row.</param>
+        public void PrintData(IEnumerable<DataRow> dataRow)
+        {
+            foreach (var data in dataRow)
+            {
+                Console.WriteLine("FirstName:- " + data.Field<string>("firstName"));
+                Console.WriteLine("lastName:- " + data.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + data.Field<string>("address"));
+                Console.WriteLine("City:- " + data.Field<string>("city"));
+                Console.WriteLine("State:- " + data.Field<string>("state"));
+                Console.WriteLine("zip:- " + Convert.ToInt32(data.Field<int>("zip")));
+                Console.WriteLine("phoneNumber:- " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                Console.WriteLine("eMail:- " + data.Field<string>("eMail"));
+                Console.WriteLine("***************");
+            }
+        }
 
     }
 }
