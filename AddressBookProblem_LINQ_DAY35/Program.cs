@@ -96,7 +96,11 @@ namespace AddressBookProblem_LINQ_DAY35
             //}
 
             //UC5- deleting contacts from address book table.
-            addressBookTable = addressBookManagement.DeletingContactFromTable(addressBookTable);
+            //addressBookTable = addressBookManagement.DeletingContactFromTable(addressBookTable);
+
+
+            //UC6
+            addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
         }
     }
 }
