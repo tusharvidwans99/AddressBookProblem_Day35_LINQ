@@ -71,6 +71,26 @@ namespace AddressBookProblem_LINQ_DAY35
             addressBookTable.Rows.Add("Kamalakar", "Singh", "Thanesar", "Kurukshetra", "Haryana", 136119, 9595959595, "kamalakar.singh");
             addressBookTable.Rows.Add("Praveen", "Kumar", "rohini", "Delhi", "Delhi", 435121, 7897897898, "praveen.kumar");
             addressBookTable.Rows.Add("Apoorva", "Singh", "Andheri", "Mumbai", "Maharashtra", 125445, 8598598599, "apporva.singh");
+
+
+
+            AddressBookManagement addressBookManagement = new AddressBookManagement();
+            //UC4
+            addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
+            //var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("state"));
+            Console.WriteLine("*******************Total data*****************");
+            foreach (var data in addressBookTable.AsEnumerable())
+            {
+                Console.WriteLine("FirstName:- " + data.Field<string>("firstName"));
+                Console.WriteLine("lastName:- " + data.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + data.Field<string>("address"));
+                Console.WriteLine("City:- " + data.Field<string>("city"));
+                Console.WriteLine("State:- " + data.Field<string>("state"));
+                Console.WriteLine("zip:- " + Convert.ToInt32(data.Field<int>("zip")));
+                Console.WriteLine("phoneNumber:- " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                Console.WriteLine("eMail:- " + data.Field<string>("eMail"));
+                Console.WriteLine("***************");
+            }
         }
     }
 }
