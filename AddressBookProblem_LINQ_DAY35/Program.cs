@@ -92,7 +92,7 @@ namespace AddressBookProblem_LINQ_DAY35
             //    Console.WriteLine("***************");
 
 
-                
+
             //}
 
             //UC5- deleting contacts from address book table.
@@ -100,7 +100,14 @@ namespace AddressBookProblem_LINQ_DAY35
 
 
             //UC6
-            addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+            //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+
+
+            //UC7
+            addressBookManagement.GetCountByCityAndState(addressBookTable);
+
+
         }
+
     }
 }
